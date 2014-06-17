@@ -984,6 +984,7 @@ containing a value of this type.
         public static final int com_mixpanel_android_square_selected=0x7f020071;
         public static final int com_mixpanel_android_text_answer_border=0x7f020072;
         public static final int ic_launcher=0x7f020073;
+        public static final int pong=0x7f020074;
     }
     public static final class id {
         public static final int action_bar=0x7f07001c;
@@ -1000,7 +1001,7 @@ containing a value of this type.
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int always=0x7f07000f;
         public static final int beginning=0x7f07000a;
-        public static final int button=0x7f07004b;
+        public static final int button=0x7f07004c;
         public static final int checkbox=0x7f07002d;
         public static final int collapseActionView=0x7f070011;
         public static final int com_mixpanel_android_activity_survey_id=0x7f070043;
@@ -1030,9 +1031,10 @@ containing a value of this type.
         public static final int icon=0x7f07002a;
         public static final int ifRoom=0x7f07000e;
         public static final int image=0x7f070027;
+        public static final int imageView=0x7f07004b;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070029;
-        public static final int main=0x7f07004c;
+        public static final int main=0x7f07004d;
         public static final int middle=0x7f07000b;
         public static final int never=0x7f07000d;
         public static final int none=0x7f070009;
@@ -1040,7 +1042,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f070018;
         public static final int progress_horizontal=0x7f070019;
         public static final int radio=0x7f07002f;
-        public static final int score=0x7f07004d;
+        public static final int score=0x7f07004e;
         public static final int search_badge=0x7f070032;
         public static final int search_bar=0x7f070031;
         public static final int search_button=0x7f070033;
@@ -1056,7 +1058,7 @@ containing a value of this type.
         public static final int showHome=0x7f070004;
         public static final int showTitle=0x7f070006;
         public static final int split_action_bar=0x7f07001e;
-        public static final int status=0x7f07004e;
+        public static final int status=0x7f07004f;
         public static final int submit_area=0x7f070039;
         public static final int tabMode=0x7f070002;
         public static final int textView=0x7f07004a;

@@ -23,6 +23,9 @@ public class Pong extends EditableActivity {
 
     private PongThread mGameThread;
 
+    ViewClient viewClient;
+    URI server;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,20 +42,14 @@ public class Pong extends EditableActivity {
         } else {
             mGameThread.restoreState(savedInstanceState);
         }
+
+        Config.connectToProxy(this);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
-
-        URI server;
-        try {
-            server = new URI("ws://" + Config.socketHost + ".com/websocket_proxy/THE_KEY");
-        } catch (URISyntaxException e) {
-            throw new RuntimeException("DoWhatNow?", e);
-        }
-        new ViewClient(this, ViewRegistry.getInstance(this), server);
+        Config.connectToProxy(this);dd
     }
 
     @Override
