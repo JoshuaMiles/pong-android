@@ -30,7 +30,6 @@ public class PongThread extends Thread {
     public static final int STATE_LOSE    = 3;
     public static final int STATE_WIN     = 4;
 
-    private static final int    PHYS_BALL_SPEED       = 8;
     private static final int    PHYS_PADDLE_SPEED     = 8;
     private static final int    PHYS_FPS              = 60;
     private static final double PHYS_MAX_BOUNCE_ANGLE = 5 * Math.PI / 12; // 75 degrees in radians
@@ -414,7 +413,7 @@ public class PongThread extends Thread {
     private void setupNewRound() {
         mBall.cx = mCanvasWidth / 2;
         mBall.cy = mCanvasHeight / 2;
-        mBall.dx = -PHYS_BALL_SPEED;
+        mBall.dx = -Config.getBallSpeed(mContext);
         mBall.dy = 0;
 
         movePlayer(mHumanPlayer,
@@ -481,8 +480,8 @@ public class PongThread extends Thread {
         float normalizedRelativeIntersectY = relativeIntersectY / (player.paddleHeight / 2);
         double bounceAngle = normalizedRelativeIntersectY * PHYS_MAX_BOUNCE_ANGLE;
 
-        ball.dx = (float) (-Math.signum(ball.dx) * PHYS_BALL_SPEED * Math.cos(bounceAngle));
-        ball.dy = (float) (PHYS_BALL_SPEED * -Math.sin(bounceAngle));
+        ball.dx = (float) (-Math.signum(ball.dx) * Config.getBallSpeed(mContext) * Math.cos(bounceAngle));
+        ball.dy = (float) (Config.getBallSpeed(mContext) * -Math.sin(bounceAngle));
 
         if (player == mHumanPlayer) {
             mBall.cx = mHumanPlayer.bounds.right + mBall.radius;

@@ -48,11 +48,11 @@ public class Pong extends EditableActivity {
 
         URI server;
         try {
-            server = new URI("ws://anluswang.com/websocket_proxy/THE_KEY");
+            server = new URI("ws://" + Config.socketHost + ".com/websocket_proxy/THE_KEY");
         } catch (URISyntaxException e) {
             throw new RuntimeException("DoWhatNow?", e);
         }
-        new ViewClient(ViewRegistry.getInstance(this), server);
+        new ViewClient(this, ViewRegistry.getInstance(this), server);
     }
 
     @Override

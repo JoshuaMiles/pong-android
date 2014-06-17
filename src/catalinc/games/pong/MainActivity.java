@@ -23,6 +23,7 @@ public class MainActivity extends EditableActivity {
         setContentView(R.layout.main_layout);
 
         MixpanelAPI mMixpanel = MixpanelAPI.getInstance(this, "1ef7e30d2a58d27f4b90c42e31d6d7ad");
+        Config.getBallSpeed(this);
     }
 
     @Override
@@ -31,11 +32,11 @@ public class MainActivity extends EditableActivity {
 
         URI server;
         try {
-            server = new URI("ws://anluswang.com/websocket_proxy/THE_KEY");
+            server = new URI("ws://" + Config.socketHost + "/websocket_proxy/THE_KEY");
         } catch (URISyntaxException e) {
             throw new RuntimeException("DoWhatNow?", e);
         }
-        new ViewClient(ViewRegistry.getInstance(this), server);
+        new ViewClient(this, ViewRegistry.getInstance(this), server);
     }
 
     public void startGame(View view) {
