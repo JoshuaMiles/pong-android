@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="4.2.1" >
+        <source path="/Users/anlu/Desktop/MixpanelDev/pong-android/build/exploded-aar/com.mixpanel.android/mixpanel-android-private/4.2.1/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/anlu/Desktop/MixpanelDev/pong-android/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/anlu/Desktop/MixpanelDev/pong-android/build-types/debug/assets" />
+    </dataSet>
+
+</merger>

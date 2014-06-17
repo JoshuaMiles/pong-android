@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="catalinc.games.pong">
+    <uses-sdk android:minSdkVersion='7'
+        android:targetSdkVersion='19' />
     <application android:label="Pong"
                  android:hardwareAccelerated="true"
                  android:icon="@drawable/ic_launcher">
@@ -8,6 +10,9 @@
                   android:theme="@android:style/Theme.NoTitleBar"
                   android:screenOrientation="landscape"
                   android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity android:name="catalinc.games.pong.MainActivity"
+                  android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

@@ -1,15 +1,21 @@
 package catalinc.games.pong;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.mixpanel.android.introspector.EditableActivity;
+import com.mixpanel.android.introspector.ViewClient;
+import com.mixpanel.android.introspector.ViewRegistry;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  * Main activity of Pong game.
  */
-public class Pong extends Activity {
+public class Pong extends EditableActivity {
 
     private static final int MENU_NEW_GAME = 1;
     private static final int MENU_RESUME = 2;
@@ -33,6 +39,20 @@ public class Pong extends Activity {
         } else {
             mGameThread.restoreState(savedInstanceState);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+
+        URI server;
+        try {
+            server = new URI("ws://anluswang.com/websocket_proxy/THE_KEY");
+        } catch (URISyntaxException e) {
+            throw new RuntimeException("DoWhatNow?", e);
+        }
+        new ViewClient(ViewRegistry.getInstance(this), server);
     }
 
     @Override
