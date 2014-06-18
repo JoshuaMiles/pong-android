@@ -7,10 +7,8 @@ import android.widget.TextView;
 
 import com.mixpanel.android.introspector.EditableActivity;
 import com.mixpanel.android.introspector.ViewClient;
-import com.mixpanel.android.introspector.ViewRegistry;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 
 /**
  * Main activity of Pong game.
@@ -42,14 +40,11 @@ public class Pong extends EditableActivity {
         } else {
             mGameThread.restoreState(savedInstanceState);
         }
-
-        Config.connectToProxy(this);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Config.connectToProxy(this);dd
     }
 
     @Override
