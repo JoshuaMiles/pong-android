@@ -1,16 +1,16 @@
 package catalinc.games.pong;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.mixpanel.android.introspector.EditableActivity;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 /**
  * Created by josh on 6/16/14.
  */
-public class MainActivity extends EditableActivity {
+public class MainActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class MainActivity extends EditableActivity {
         setContentView(R.layout.main_layout);
 
         MixpanelAPI mMixpanel = MixpanelAPI.getInstance(this, "1ef7e30d2a58d27f4b90c42e31d6d7ad");
-        Config.getBallSpeed(this);
     }
 
     @Override

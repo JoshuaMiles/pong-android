@@ -1,19 +1,17 @@
 package catalinc.games.pong;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
-import com.mixpanel.android.introspector.EditableActivity;
-import com.mixpanel.android.introspector.ViewClient;
 
 import java.net.URI;
 
 /**
  * Main activity of Pong game.
  */
-public class Pong extends EditableActivity {
+public class Pong extends Activity {
 
     private static final int MENU_NEW_GAME = 1;
     private static final int MENU_RESUME = 2;
@@ -21,7 +19,6 @@ public class Pong extends EditableActivity {
 
     private PongThread mGameThread;
 
-    ViewClient viewClient;
     URI server;
 
     @Override
@@ -40,6 +37,8 @@ public class Pong extends EditableActivity {
         } else {
             mGameThread.restoreState(savedInstanceState);
         }
+
+
     }
 
     @Override
